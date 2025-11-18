@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💙 Daily Boost</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="card main-card">
+        <!-- 헤더 -->
+        <div class="header">
+            <h1 class="title">💙 Daily Boost</h1>
+            <p class="subtitle">오늘 기분이 어떠세요?</p>
+        </div>
+
+        <!-- 카테고리 버튼 -->
+        <div class="category-buttons">
+            <button class="btn btn-category btn-sad" onclick="getMotivation('SAD')">
+                😢<br><span>우울해요</span>
+            </button>
+            <button class="btn btn-category btn-anxious" onclick="getMotivation('ANXIOUS')">
+                😰<br><span>불안해요</span>
+            </button>
+            <button class="btn btn-category btn-tired" onclick="getMotivation('TIRED')">
+                😫<br><span>피곤해요</span>
+            </button>
+            <button class="btn btn-category btn-lonely" onclick="getMotivation('LONELY')">
+                😔<br><span>외로워요</span>
+            </button>
+            <button class="btn btn-category btn-angry" onclick="getMotivation('ANGRY')">
+                😠<br><span>화나요</span>
+            </button>
+            <button class="btn btn-category btn-happy" onclick="getMotivation('HAPPY')">
+                😊<br><span>기뻐요</span>
+            </button>
+            <button class="btn btn-category btn-motivated" onclick="getMotivation('MOTIVATED')">
+                🔥<br><span>의욕적</span>
+            </button>
+        </div>
+
+        <!-- 메시지 표시 영역 -->
+        <div id="message-container" class="message-container" style="display: none;">
+            <div class="message-box">
+                <div class="emoji-large" id="emoji"></div>
+                <p class="message-text" id="message"></p>
+                <small class="message-meta" id="category"></small>
+            </div>
+        </div>
+
+        <!-- 로딩 표시 -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>메시지를 불러오는 중...</p>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="footer">
+            <p class="philosophy">
+                "관찰하고, 기록하고, 함께 있습니다."<br>
+                <small>- Inspired by Amelia Episodes 10-13</small>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/app.js"></script>
+</body>
+</html>
