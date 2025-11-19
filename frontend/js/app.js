@@ -112,3 +112,38 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Philosophy: "관찰하고, 기록하고, 함께 있습니다."');
     console.log('- Inspired by Amelia Episodes 10-13');
 });
+
+// 터치 피드백
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-category');
+
+    buttons.forEach(button => {
+        // 터치 시작
+        button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        }, { passive: true });
+
+        // 터치 끝
+        button.addEventListener('touchend', function() {
+            this.style.transform = '';
+        }, { passive: true });
+    });
+});
+
+// 화면 회전 감지
+window.addEventListener('orientationchange', () => {
+    // 회전 후 레이아웃 재조정
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+});
+
+// 모바일 뷰포트 높이 보정 (주소창 때문에)
+function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', setVH);
+window.addEventListener('orientationchange', setVH);

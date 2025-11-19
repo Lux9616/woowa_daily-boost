@@ -261,4 +261,128 @@ body {
     .message-text {
         font-size: 1.1rem;
     }
+
+}
+
+/* 터치 영역 확대 */
+.btn-category {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 100px; /* 터치하기 좋은 크기 */
+}
+
+/* 작은 화면 (iPhone SE 등) */
+@media (max-width: 375px) {
+    .main-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .category-buttons {
+        gap: 8px;
+    }
+
+    .btn-category {
+        padding: 12px;
+        font-size: 1.6rem;
+        min-height: 85px;
+    }
+
+    .btn-category span {
+        font-size: 0.75rem;
+    }
+
+    .message-box {
+        padding: 20px;
+    }
+
+    .emoji-large {
+        font-size: 2.5rem;
+    }
+
+    .message-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .philosophy {
+        font-size: 0.85rem;
+    }
+}
+
+/* 가로 모드 */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        padding: 10px;
+    }
+
+    .main-card {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .category-buttons {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .btn-category {
+        min-height: 70px;
+        padding: 10px;
+    }
+
+    .footer {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+}
+
+/* iOS Safe Area */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+    }
+}
+
+/* 터치 디바이스 최적화 */
+@media (hover: none) and (pointer: coarse) {
+    .btn-category:active {
+        transform: scale(0.95);
+    }
+}
+
+/* 스크롤 부드럽게 */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 텍스트 선택 방지 (버튼) */
+.btn-category {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
